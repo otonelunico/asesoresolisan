@@ -6,5 +6,9 @@ class PageForm(forms.ModelForm):
 	class Meta:
 		model=Page
 		fields=[
+			'title',
+			'us',
 			'note',
+			'service_one',
+			'service_two'
          ]

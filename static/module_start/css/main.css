@@ -72,8 +72,6 @@ body
 	height: auto;
 	font-weight: 200;
 	letter-spacing: 5px;
-
-	text-shadow: 0px 0px 80px rgba(0,0,0,1);
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
 	color: #fff;
@@ -130,6 +128,8 @@ body
 	display: table-cell;
 	vertical-align: middle;
 	position: relative;
+	background-color: rgba(0,0,0,0.31);
+/*	box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.41); */
 }
 .header-table{
 	display: table;
@@ -140,12 +140,10 @@ body
 	font-size: 40px;
 	letter-spacing: 10px;
 	font-weight: 200;
-	text-shadow: 0px 0px 80px rgba(0,0,0,1);
 }
 .header-subtitle{
 	font-size: 20px;
 	letter-spacing: 3px;
-	text-shadow: 0px 0px 80px rgba(0,0,0,1);
 }
 /*=================================================
 ||				4. Our Service

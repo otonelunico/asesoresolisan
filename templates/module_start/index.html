@@ -13,7 +13,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
 		<title>Asesorias</title>
         <link href="{% static 'module_start/css/bootstrap.min.css' %}" rel="stylesheet">
-		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="{% static 'module_start/css/owl.carousel.css' %}">
 		<link rel="stylesheet" href="{% static 'module_start/css/owl.theme.css' %}">
 	    <link rel="stylesheet" href="{% static 'module_start/css/main.css' %}">
@@ -69,7 +69,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Asesorias Isapres</a>
+                        <a class="navbar-brand" href="#">Asesorias</a>
                     </div> <!-- /.navbar-header -->
     
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,28 +86,21 @@
             </nav>
             <div class="container">
                 <div class="header-table">
-                        {% if admin %}
-                            <icon><i class="ion ion-ios-compose"></i></icon>
-                        {% endif %}
                     <div class="header-wrapper">
-                        <h1 class="header-title">
-                            ¿Buscas el mejor plan de salud?
-                        </h1>
-                        <h1 class="header-title">
-                            Te asesoramos sin costo!!
-                        </h1>
-                        <p class="header-subtitle">
-                            Confia en nosotros, 20 años de experiancias asesorando clientes.
-                        </p>
+                        <div class="header-title">
+                        {% if admin %}
+                            <textarea id="editor3" name="title">{{ page.title }}
+                            </textarea>
+                        {% else %}
+                            {{ page.title }}
+                        {% endif %}
+                        </div>
                     </div> <!-- /.header-wrapper -->
                 </div>
             </div> <!-- /.container -->
         </section> 
             <!-- About Us -->
         <section class="about" id="about">
-                        {% if admin %}
-                            <icon><i class="ion ion-ios-compose"></i></icon>
-                        {% endif %}
             <div class="container section-wrapper">
                 <h2 class="section-title black">
                     Nosotros
@@ -122,9 +115,13 @@
                     </div> <!-- /.col-md-3 -->
     
                     <div class="col-md-6 col-sm-12">
-                        <textarea id="editor1" name="">
-                        Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia. Estoy solo, y me felicito de vivir en este país, el más a propósito para almas como la mía, soy tan dichoso, mi querido amigo, me sojuzga de tal modo la idea de reposar, que no me ocupo de mi arte. Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y, sin embargo, jamás he sido mejor pintor Cuando el valle se vela en torno mío con un encaje de vapores; cuando el sol de mediodía centellea sobre la
+                        {% if admin %}
+                        <textarea id="editor1" name="us">
+                        {{ page.us }}
                         </textarea> <!-- /.about-detail -->
+                        {% else %}
+                        {{ page.us }}
+                        {% endif %}
                     </div> <!-- /.col-md-6 -->
     
                 </div> <!-- /.row -->
@@ -159,66 +156,29 @@
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
+                            <style type="text/css">
+                                .service p{
+                                    color: #828282;
+                                }
+                            </style>
+							<div class="col-xs-6 col-sm-6">
+								<div class="service-item" align="center">
+                                    {% if admin %}
+                                        <textarea name="service_one" id="editor4"> {{ page.service_one }}</textarea>
+                                    {% else %}
+                                        {{ page.service_one }}
+                                    {% endif %}
 								</div> <!-- /.service-item -->
 							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
+							<div class="col-xs-6 col-sm-6">
+								<div class="service-item" align="center">
+                                    {% if admin %}
+                                        <textarea name="service_two" id="editor5"> {{ page.service_two }}</textarea>
+                                    {% else %}
+                                        {{ page.service_two }}
+                                    {% endif %}
 								</div> <!-- /.service-item -->
 							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
-								</div> <!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
-								</div> <!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
-								</div> <!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">
-										Nombre
-									</h3>
-									<p class="section-item-detail">
-										Detalle del servicio.
-									</p>
-								</div> <!-- /.service-item -->
-                            </div>
 						</div> <!-- /.row -->
 					</div> <!-- /.col-md-6 -->
 				</div> <!-- /.row -->
@@ -229,17 +189,17 @@
 	    <section class="testimonial">
 		<div class="container section-wrapper">
 			<div class="section-title">
-				Testimonios
+				REFERENCIAS
 			</div> <!-- /.section-title -->
 			<div class="underline white"></div>
 			<div class="owl-carousel testimonial-owl">
 				<div class="item">
 					<p class="testimonial-detail">
-					Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia.
+					 Si te gusta nuestra atención, recomiéndanos, a tus amigos y familiares.
                     </p>
 					<div class="test-name">
-						<strong>Alan Walker</strong> <br>
-						Dentista
+						<strong>Eduardo Solis </strong> <br>
+						Asesor previsional.
 					</div>
 				</div> <!-- /.item -->
 				<div class="item">
@@ -379,20 +339,7 @@
     <script src="{% static 'module_start/js/contact.js' %}"></script>
 	<script src="{% static 'module_start/js/script.js' %}"></script>
 {% if admin %}
-    <script type="text/javascript">
-    ClassicEditor
-        .create( document.querySelector( '#editor1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    </script>
-    <script type="text/javascript">
-    ClassicEditor
-        .create( document.querySelector( '#editor2' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    </script>
+	<script src="{% static 'module_start/js/act_box.js' %}"></script>
     <script type="text/javascript">
         function guardar() {
             document.getElementById('form').submit();
