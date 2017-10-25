@@ -53,7 +53,7 @@ body
 ==================================================*/
 .header
 {
-	background: url('../images/back.jpg');
+	background: url("../images/back.6a420d55a8b3.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -189,13 +189,13 @@ body
 {
     /*content: "\f3d2";*/
     /*font-family: 'ionicons';*/
-    content: url("../images/left.png");
+    content: url("../images/left.67331e51ef47.png");
 }
 .owl-next:before
 {
     /*content: "\f3d3";*/
     /*font-family: "ionicons";*/
-    content: url("../images/right.png");
+    content: url("../images/right.516207ce4193.png");
 }
 
 /*=================================================
@@ -389,7 +389,7 @@ a .rss:hover{
 ==================================================*/
 /*Testimonial*/
 .testimonial{
-	background: url('../images/testimonial.png');
+	background: url("../images/testimonial.7b54715e30cf.png");
 	color: #fff;
 }
 .testimonial .section-title{
@@ -424,11 +424,11 @@ a .rss:hover{
 /*Add*/
 .add .owl-prev:before
 {
-    content: url("../images/bleft.png");
+    content: url("../images/bleft.bac2ea58b094.png");
 }
 .add .owl-next:before
 {
-    content: url("../images/bright.png");
+    content: url("../images/bright.24f9c070815b.png");
 }
 .owl-next
 {
