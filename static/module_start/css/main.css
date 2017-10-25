@@ -53,7 +53,7 @@ body
 ==================================================*/
 .header
 {
-	background: url('http://www.rlb.ca/wp-content/uploads/2016/01/Jan-2016-T4-Its-a-new-year-and-a-new-payroll-shutterstock_296302733-1200x800.jpg');
+	background: url('../images/back.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -71,7 +71,7 @@ body
 	padding: 10px 20px;
 	height: auto;
 	font-weight: 200;
-	letter-spacing: 5px;
+	letter-spacing: 0px;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
 	color: #fff;
@@ -128,8 +128,8 @@ body
 	display: table-cell;
 	vertical-align: middle;
 	position: relative;
-	background-color: rgba(0,0,0,0.31);
-/*	box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.41); */
+/*	background-color: rgba(0,0,0,0.31);
+	box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.41); */
 }
 .header-table{
 	display: table;
@@ -138,7 +138,7 @@ body
 }
 .header-title{
 	font-size: 40px;
-	letter-spacing: 10px;
+	letter-spacing: 5px;
 	font-weight: 200;
 }
 .header-subtitle{
