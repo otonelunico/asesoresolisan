@@ -41,16 +41,16 @@
                 background-color: rgba(255,255,255,0);
                 border: 1px solid rgba(255,255,255,0);
             }
-            #us_jpg1 {
-                background: url('../media/{{ page.us_jpg1 }}');
+            #us_img1 {
+                background: url('../media/{{ page.us_img1 }}');
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
                 height: 250px;
                 width: 250px
             }
-            #us_jpg2 {
-                background: url('../media/{{ page.us_jpg2 }}');
+            #us_img2 {
+                background: url('../media/{{ page.us_img2 }}');
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -105,7 +105,7 @@
                     <div class="header-wrapper">
                         <div class="header-title">
                         {% if admin %}
-                            <textarea id="editor3" name="title">{{ page.title }}
+                            <textarea id="editor_title" name="title">{{ page.title }}
                             </textarea>
                         {% else %}
                             {{ page.title }}
@@ -127,23 +127,23 @@
                 <div class="underline purple"></div>
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
-                    <div id="us_jpg1">
+                    <div id="us_img1">
 
                     </div>
                         {% if admin %}
-                        <input type="file" style="display: none" name="us_jpg1" id="id_us_jpg1" />
-                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_jpg1').click();" title="Cargar imagen resolucion ideal 250x250px">
+                        <input type="file" style="display: none" name="us_img1" id="id_us_img1" />
+                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img1').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
                     </div>
                     <div class="col-md-3 col-sm-6">
-                    <div id="us_jpg2">
+                    <div id="us_img2">
 
                     </div>
                         {% if admin %}
-                        <input type="file" style="display: none" name="us_jpg2" id="id_us_jpg2" />
-                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_jpg2').click();" title="Cargar imagen resolucion ideal 250x250px">
+                        <input type="file" style="display: none" name="us_img2" id="id_us_img2" />
+                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img2').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
-                        <!-- <img src="../media/{{ page.us_jpg1 }}" alt="about" class="about-img"> -->
+                        <!-- <img src="../media/{{ page.us_img1 }}" alt="about" class="about-img"> -->
                     </div> <!-- /.col-md-3 -->
 
     
@@ -185,7 +185,11 @@
 				<div class="underline purple"></div>
 				<div class="row">
 					<div class="">
-						<img src="https://j-concept.com/assets/images/service.png" alt="service" class="service-img img-responsive">
+						<img src="../media/{{ page.service_img }}">
+                        {% if admin %}
+                        <input type="file" style="display: none" name="service_img" id="id_service_img" />
+                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_service_img').click();" title="Cargar imagen">
+                        {% endif %}
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
