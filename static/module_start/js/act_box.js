@@ -1,4 +1,21 @@
 
+
+    ClassicEditor
+        .create( document.querySelector( '#editor_referencia1' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    ClassicEditor
+        .create( document.querySelector( '#editor_referencia2' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    ClassicEditor
+        .create( document.querySelector( '#editor_referencia3' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
     ClassicEditor
         .create( document.querySelector( '#editor1' ) )
         .catch( error => {
@@ -24,6 +41,13 @@
         .catch( error => {
             console.error( error );
         } );
+
+    ClassicEditor
+        .create( document.querySelector( '#editor_referencia' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
     ClassicEditor
     .create( document.querySelector( '#editor_title' ), {
         toolbar: [ 'headings', 'bold', 'italic', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', ],
@@ -41,3 +65,4 @@
     .catch( error => {
         console.log( error );
     } );
+

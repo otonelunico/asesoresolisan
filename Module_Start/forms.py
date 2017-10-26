@@ -7,10 +7,14 @@ class PageForm(forms.ModelForm):
 		model=Page
 		fields=[
 			'title',
-			'us_jpg1',
-			'us_jpg2',
+			'us_img1',
+			'us_img2',
 			'us',
 			'note',
+			'service_img',
 			'service_one',
-			'service_two'
+			'service_two',
+            'reference_one',
+            'reference_tree',
+            'reference_two'
          ]

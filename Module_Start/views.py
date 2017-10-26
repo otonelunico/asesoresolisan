@@ -16,6 +16,9 @@ class Index(View):
         page.note = mark_safe(page.note)
         page.service_one = mark_safe(page.service_one)
         page.service_two = mark_safe(page.service_two)
+        page.reference_one = mark_safe(page.reference_one)
+        page.reference_two = mark_safe(page.reference_two)
+        page.reference_tree = mark_safe(page.reference_tree)
         return render(request, self.template, locals())
 
 class Admin(View):
@@ -27,6 +30,9 @@ class Admin(View):
         page.title = mark_safe(page.title)
         page.us = mark_safe(page.us)
         page.note = mark_safe(page.note)
+        page.reference_one = mark_safe(page.reference_one)
+        page.reference_two = mark_safe(page.reference_two)
+        page.reference_tree = mark_safe(page.reference_tree)
         admin = True
         return render(request, self.template, locals())
 
@@ -35,16 +41,19 @@ class Admin(View):
         page.title = mark_safe(page.title)
         page.us = mark_safe(page.us)
         page.note = mark_safe(page.note)
+        page.reference_one = mark_safe(page.reference_one)
+        page.reference_two = mark_safe(page.reference_two)
+        page.reference_tree = mark_safe(page.reference_tree)
         form = PageForm(request.POST, request.FILES)
         admin = True
         if form.is_valid():
             obj = form.save(commit=False)
-            print(obj.us_jpg1)
-            print(obj.us_jpg2)
-            if obj.us_jpg1 == 'us_jpg1.png':
-                obj.us_jpg1 = page.us_jpg1
-            if obj.us_jpg2 == 'us_jpg2.png':
-                obj.us_jpg2 = page.us_jpg2
+            print(obj.us_img1)
+            print(obj.us_img2)
+            if obj.us_img1 == 'us_img1.png':
+                obj.us_img1 = page.us_img1
+            if obj.us_img2 == 'us_img2.png':
+                obj.us_img2 = page.us_img2
             form.save()
             return redirect('module_start:home')
         else:

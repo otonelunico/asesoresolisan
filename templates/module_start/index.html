@@ -72,7 +72,6 @@
 {% if admin %}
     <form method="post" enctype="multipart/form-data" name="form">
         {% csrf_token %} {% endif %}
-        <!-- Home -->
         <section class="header" id="header">
     
             <nav class="navbar navbar-default" id="navigation-bar">
@@ -115,10 +114,7 @@
                 </div>
             </div> <!-- /.container -->
         </section>
-        <div style="background-color: #f3f3f3; padding-top: 20px">
-
-        </div>
-            <!-- About Us -->
+        <div style="background-color: #f3f3f3; padding-top: 20px"></div>
         <section class="about" id="about">
             <div class="container section-wrapper">
                 <h2 class="section-title black">
@@ -161,21 +157,19 @@
     
     
             </div> <!-- /.container -->
-        </section> 
-            <!-- Note -->
+        </section>
 	    <section class="note purple" id="note">
-		<div class="container section-wrapper text-center">
-            {% if admin %}
-            <textarea name="note" id="editor2">
-                {{ page.note }}
-            </textarea>
-            {% else %}
-            <div style="padding: 20px">{{ page.note }}</div>
-            {% endif %}
-        </div>
+            <div class="container section-wrapper text-center">
+                {% if admin %}
+                <textarea name="note" id="editor2">
+                    {{ page.note }}
+                </textarea>
+                {% else %}
+                <div style="padding: 20px">{{ page.note }}</div>
+                {% endif %}
+            </div>
             <!-- /.quote -->
-	</section>
-        <!-- Our Services -->
+	    </section>
 	    <section class="service" id="service">
 		<div class="container">
 			<div class="_section-wrapper">
@@ -184,15 +178,18 @@
 				</h2> <!-- /.section-title -->
 				<div class="underline purple"></div>
 				<div class="row">
-					<div class="">
-						<img src="../media/{{ page.service_img }}">
-                        {% if admin %}
+					<div class="" >
+						<img src="../media/{{ page.service_img }}" alt="service" class="service-img img-responsive" style="max-width: 420px">
+
+					</div>{% if admin %}
                         <input type="file" style="display: none" name="service_img" id="id_service_img" />
-                        <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_service_img').click();" title="Cargar imagen">
+                        <input type="button" style="margin-bottom: 100px" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_service_img').click();" title="Cargar imagen">
                         {% endif %}
-					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
+        <div style="background-color: #ededed; padding-top: 60px">
+
+        </div>
                             <style type="text/css">
                                 .service p{
                                     color: #828282;
@@ -222,43 +219,43 @@
 			</div> <!-- /.section-wrapper -->
 		</div> <!-- /.container -->
 	</section>
-        <!-- Testimonial -->
+        <div style="background-color: #ededed; padding-top: 80px"></div>
 	    <section class="testimonial">
-		<div class="container section-wrapper">
-			<div class="section-title">
-				REFERENCIAS
-			</div> <!-- /.section-title -->
-			<div class="underline white"></div>
-			<div class="owl-carousel testimonial-owl">
-				<div class="item">
-					<p class="testimonial-detail">
-					 Si te gusta nuestra atención, recomiéndanos, a tus amigos y familiares.
-                    </p>
-					<div class="test-name">
-						<strong>Eduardo Solis </strong> <br>
-						Asesor previsional.
-					</div>
-				</div> <!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">
-					Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia.
-                    </p>
-					<div class="test-name">
-						<strong>Alan Walker</strong> <br>
-						Dentista
-					</div>
-				</div> <!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">
-					Reina en mi espíritu una alegría admirable, muy parecida a las dulces alboradas de la primavera, de que gozo aquí con delicia.
-                    </p>
-					<div class="test-name">
-						<strong>Alan Walker</strong> <br>
-						Dentista
-					</div>
-				</div> <!-- /.item -->
-			</div> <!-- /.owl-carousel -->
-		</div> <!-- /.container -->
+            <div class="container section-wrapper">
+                <div class="section-title">
+                    REFERENCIAS
+                </div>
+                <div class="underline white"></div>
+                <div {% if admin %} align="center" {% else %}class="owl-carousel testimonial-owl" {% endif %}>
+                    <div {% if admin %} style="height: 500px"{% else %} class="item"{% endif %}>
+                        {% if admin %}
+                            <textarea name="reference_one" id="editor_referencia1">
+                                {{ page.reference_one }}
+                            </textarea>
+                        {% else %}
+                            {{  page.reference_one }}
+                        {% endif %}
+                    </div> <!-- /.item -->
+                    <div {% if admin %} style="height: 500px; padding-top: 40px"{% else %} class="item"{% endif %}>
+                        {% if admin %}
+                            <textarea name="reference_two" id="editor_referencia2">
+                                {{ page.reference_two }}
+                            </textarea>
+                        {% else %}
+                        {{  page.reference_two }}
+                        {% endif %}
+                        </div>
+                    <div {% if admin %} style="height: 318px; padding-top: 40px"{% else %} class="item"{% endif %}>
+                    {% if admin %}
+                        <textarea name="reference_tree" id="editor_referencia3">
+                            {{ page.reference_tree }}
+                        </textarea>
+                    {% else %}
+                    {{  page.reference_tree }}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
 	</section>
         <!-- Contact with us -->
 	    <section class="contact section-wrapper" id="contact">
