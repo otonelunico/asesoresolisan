@@ -7,6 +7,8 @@ class PageForm(forms.ModelForm):
 		model=Page
 		fields=[
 			'title',
+			'us_jpg1',
+			'us_jpg2',
 			'us',
 			'note',
 			'service_one',

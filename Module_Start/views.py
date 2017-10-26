@@ -35,12 +35,20 @@ class Admin(View):
         page.title = mark_safe(page.title)
         page.us = mark_safe(page.us)
         page.note = mark_safe(page.note)
-        form = PageForm(request.POST)
+        form = PageForm(request.POST, request.FILES)
         admin = True
         if form.is_valid():
+            obj = form.save(commit=False)
+            print(obj.us_jpg1)
+            print(obj.us_jpg2)
+            if obj.us_jpg1 == 'us_jpg1.png':
+                obj.us_jpg1 = page.us_jpg1
+            if obj.us_jpg2 == 'us_jpg2.png':
+                obj.us_jpg2 = page.us_jpg2
             form.save()
             return redirect('module_start:home')
         else:
+            form = PageForm()
             print(form.is_valid())
             print(form.errors)
         return render(request, self.template, locals())
