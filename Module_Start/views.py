@@ -43,6 +43,7 @@ class Index(View):
             template = get_template('module_start/email.html')
             context = {'name': obj.name,
                        'rut': obj.rut,
+                       'email': obj.email,
                        'city': obj.city,
                        'phone': obj.phone,
                         'gender' : obj.gender,
