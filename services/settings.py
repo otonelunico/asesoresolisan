@@ -25,7 +25,7 @@ SECRET_KEY = 'f%(v$qxwzynas!f%3($tizj959)1x=gvmfm4=fvyv=wi9bl=$k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rowebservices.herokuapp.com', '127.0.0.1', 'rosystems.cl']
+ALLOWED_HOSTS = ['rowebservices.herokuapp.com', '127.0.0.1', '*']
 
 
 # Application definition
