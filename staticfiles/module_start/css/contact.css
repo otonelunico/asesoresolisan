@@ -19,6 +19,9 @@
     float: left;
     transition: all .6s ease-in-out;
 }
+.contact-item {
+    padding-left: 15%;
+}
 .contact-item:hover i{
     background-color: #4a148c;
     border: 2px solid #4a148c !important;
