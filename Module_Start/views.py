@@ -5,6 +5,7 @@ from .models import Page
 from django.core.mail import EmailMessage
 from django.template import Context
 from django.template.loader import get_template
+from services.settings import EMAIL_TO
 
 
 from django.utils.safestring import mark_safe
@@ -54,7 +55,7 @@ class Index(View):
             msg = EmailMessage(obj.name+' '+obj.rut+' Se esta contactando por intermedio de la pagina web',
                                content,
                                 "contacto@rosystems.cl",
-                                to =   ['ocubillosj@gmail.com'])
+                                to = [EMAIL_TO])
             msg.content_subtype = 'html'
             msg.send()
             send_ = True
