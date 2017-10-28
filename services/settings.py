@@ -132,3 +132,12 @@ MEDIA_URL = '/media/'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# EMAIL SETTINGS
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'contacto@rosystems.cl'
+EMAIL_HOST_PASSWORD = 'q1w2e3r4t5y6'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

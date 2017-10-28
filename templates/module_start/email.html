@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html class="noIE" lang="es-ES">
+	<head>
+		<!-- meta -->
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+<style type="text/css">
+	.data {
+		width: 45%;
+		display: inline-block;
+		margin: 1%;
+		padding: 1%;
+		background-color: #F2F2F2  
+	}
+	.message{
+		width: 94%;
+		border: 1px solid #CCC;
+		margin: 1%;
+		padding: 1%;
+		background-color: #F2F2F2  
+	}
+	a{
+		color: white;
+		font-weight: bold;
+
+	}
+	body{ 
+		font-family: "calibri", Garamond, 'Comic Sans';
+		background-color: #FFFFFF  
+	}
+	footer{
+		text-align: center;
+		background-color: #777777; 
+		color: white; 
+		padding: 3%
+		}
+</style>
+	</head>
+<body>
+	<div class="data">
+		<h3>Nombre:</h3>
+		<h4>{{ name }}</h4>
+		<h3>Rut:</h3>
+		<h4>{{ rut }}</h4>
+		<h3>Correo electronico:</h3>
+		<h4><a href="mailto:{{ email }}"></a>{{ email }}</h4>
+		<h3>Ciudad:</h3>
+		<h4>{{ city }}</h4>
+	</div>
+	<div class="data">
+		<h3>Telefono:</h3>
+		<h4>{{ phone }}</h4>
+		<h3>Sexo:</h3>
+		<h4>{{ qender }}</h4>
+		<h3>Prevision:</h3>
+		<h4>{{ prevision }}</h4>
+	</div>
+	<div class="message">
+		<h3>Mensaje:</h3>
+		<h4>{{ message }}</h4>
+	</div>
+	<footer>Equipo de <a href="http://RoSystems.cl">RoSystems.cl</a></footer>
+</body>

@@ -4,13 +4,12 @@
 <!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
 <!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html class="noIE" lang="en-US">
+<html class="noIE" lang="es-ES">
 <!--<![endif]-->
 	<head>
-		<!-- meta -->
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
 		<title>ASESORIAS ISAPRES & SEGUROS EN CLINICA</title>
         <link href="{% static 'module_start/css/bootstrap.min.css' %}" rel="stylesheet">
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -21,7 +20,7 @@
 	    <link rel="stylesheet" href="{% static 'module_start/css/contact.css' %}">
 	    <link rel="stylesheet" href="{% static 'module_start/css/service.css' %}">
 	    <link rel="stylesheet" href="{% static 'module_start/css/one-page-style.css' %}">
- <script src="{% static 'module_start/js/ckeditor5/ckeditor.js' %}"></script>
+        <script src="{% static 'module_start/js/ckeditor5/ckeditor.js' %}"></script>
         <style type="text/css">
             icon {
                 position: absolute;
@@ -45,17 +44,15 @@
                 background: url('../media/{{ page.us_img1 }}');
                 background-repeat: no-repeat;
                 background-position: center center;
-                background-size: cover;
                 height: 250px;
-                width: 250px
+                width: auto
             }
             #us_img2 {
                 background: url('../media/{{ page.us_img2 }}');
                 background-repeat: no-repeat;
                 background-position: center center;
-                background-size: cover;
                 height: 250px;
-                width: 250px
+                width: auto
             }
         </style>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -69,11 +66,9 @@
 		    <![endif]-->
 	</head>
 <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
-{% if admin %}
-    <form method="post" enctype="multipart/form-data" name="form">
-        {% csrf_token %} {% endif %}
+
         <section class="header" id="header">
-    
+
             <nav class="navbar navbar-default" id="navigation-bar">
                 <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -86,7 +81,7 @@
                         </button>
                         <a class="navbar-brand" href="#">ASESORIAS solis</a>
                     </div> <!-- /.navbar-header -->
-    
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
@@ -121,41 +116,32 @@
                     Nosotros
                 </h2> <!-- /.section-title -->
                 <div class="underline purple"></div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-3 col-sm-6">
-                    <div id="us_img1">
-
-                    </div>
+                        <div id="us_img1"></div>
                         {% if admin %}
                         <input type="file" style="display: none" name="us_img1" id="id_us_img1" />
                         <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img1').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
                     </div>
                     <div class="col-md-3 col-sm-6">
-                    <div id="us_img2">
-
-                    </div>
+                        <div id="us_img2"></div>
                         {% if admin %}
                         <input type="file" style="display: none" name="us_img2" id="id_us_img2" />
                         <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img2').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
                         <!-- <img src="../media/{{ page.us_img1 }}" alt="about" class="about-img"> -->
                     </div> <!-- /.col-md-3 -->
-
-    
-                    <div class="col-md-6 col-sm-12" style="padding-top: 20px">
+                    <div class="col-md-6 col-sm-12" align="justify" style="padding: 30px">
                         {% if admin %}
-                        <textarea id="editor1" name="us">
-                        {{ page.us }}
-                        </textarea> <!-- /.about-detail -->
+                            <textarea id="editor1" name="us">
+                                {{ page.us }}
+                            </textarea> <!-- /.about-detail -->
                         {% else %}
-                        {{ page.us }}
+                            {{ page.us }}
                         {% endif %}
-                    </div> <!-- /.col-md-6 -->
-    
+                    </div>
                 </div> <!-- /.row -->
-    
-    
             </div> <!-- /.container -->
         </section>
 	    <section class="note purple" id="note">
@@ -257,81 +243,109 @@
                 </div>
             </div>
 	</section>
-        <!-- Contact with us -->
-	    <section class="contact section-wrapper" id="contact">
+        <section class="contact section-wrapper" id="contact">
 		<div class="container">
 			<div class="row">
-	            <div class="col-sm-3 contact-item col-sm-6 col-xs-12">
-	                <i class="ion-location"></i>
-	                <h3>Direccion</h3>
-	                <p class="contact">
-	                    Av. San Luis <br>
-	                    Maipu, Santiago
-	                </p>
-	            </div>
-	            <div class="col-sm-3 contact-item col-sm-6 col-xs-12">
+	            <div class="col-sm-6 contact-item col-sm-6 col-xs-12">
 	                <i class="ion-ios-telephone"></i>
 	                <h3>Telefono</h3>
 	                <p class="contact">
-	                    Fijo: 22256765 <br>
-	                    Movil: +56950877654
+                        {% if admin %}
+                            <input type="number"  name="phone_one" value="{{ page.phone_one }}" ><br>
+                            <input type="number" name="phone_two" value="{{ page.phone_two }}">
+                        {% else %}
+	                    Movil: <a href="tel:+{{ page.phone_one }}">+{{ page.phone_one }}</a> <br>
+	                    Movil: <a href="tel:+{{ page.phone_two }}">+{{ page.phone_two }}</a>
+                        {% endif %}
 	                </p>
 	            </div>
-	            <div class="col-sm-3 contact-item col-sm-6 col-xs-12">
+	            <div class="col-sm-6 contact-item col-sm-6 col-xs-12">
 	                <i class="ion-ios-email"></i>
 	                <h3>E-mail</h3>
 	                <p class="contact">
-	                    <a href="mailto:info@Info.com">info@info.com</a> <br>
-	                    <a href="www.info.com">www.info.com</a>
-	                </p>
-	            </div>
-	            <div class="col-sm-3 contact-item col-sm-6 col-xs-12">
-	                <i class="ion-ios-email"></i>
-	                <h3>E-mail</h3>
-	                <p class="contact">
-	                    <a href="mailto:info@Info.com">info@info.com</a> <br>
-	                    <a href="www.info.com">www.info.com</a>
+	                    <a href="mailto:info@asesoresolisan.cl ">info@asesoresolisan.cl</a> <br>
+	                    <a href="http://asesoresolisan.cl">asesoresolisan.cl</a>
 	                </p>
 	            </div>
 
 
-	        </div> <!-- /.row -->
-	        <form class="row form">
-                <h3>Envianos un mensaje</h3>
-                <div class="col-sm-4 col-xs-12 form-group">
-                    <label class="sr-only">Nombre</label>
-                    <input name="name" class="form-control" type="text" placeholder="Nombres">
-                </div> <!-- /.form-group -->
-                <div class="col-sm-4 col-xs-12 form-group">
-                    <label class="sr-only">Email</label>
-                    <input name="email" class="form-control" type="email" placeholder="Correo electronico">
-                </div> <!-- /.form-group -->
-                <div class="col-sm-4 col-xs-12 form-group">
-                    <label class="sr-only">Telefono</label>
-                    <input name="website" class="form-control" type="text" placeholder="+569xxxxxxxx">
-                </div> <!-- /.form-group -->
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 form-group">
-                        <label class="sr-only">Mensaje</label>
-                        <textarea class="message form-control" placeholder="Escribir mensaje"></textarea>
-                    </div> <!-- /.form-group -->
-                    <input class="btn btn-sub" type="submit" value="Enviar mensaje">
+	        </div>
+        {% ifnotequal admin True%}
+            <form method="post" name="form">
+                {% csrf_token %}
+                <div class="form">
+                    <div class="row" style="padding-left: 15px; padding-right: 15px">
+                        <h3>Envianos un mensaje</h3>
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Nombre</label>
+                            <input name="name" class="form-control" type="text" placeholder="Nombres" maxlength="100">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Rut</label>
+                            <input name="rut" class="form-control" type="text" placeholder="Ej. 11111111-1" maxlength="10" minlength="9">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Email</label>
+                            <input name="email" class="form-control" type="email" placeholder="usuario@correo.cl" maxlength="100">
+                        </div>
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Ciudad</label>
+                            <input name="city" class="form-control" type="text" placeholder="Ej. Santiago" maxlength="100">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Telefono</label>
+                            <input name="phone" class="form-control" type="number" placeholder="+5697413215" maxlength="10" minlength="9">
+                        </div>
+                        <div class="col-sm-2 col-xs-12 form-group">
+                            <label class="sr-only">Sexo</label>
+                            <div style="padding-left: 10px; color: #7a7a7a">Hombre&nbsp;&nbsp;
+                                <input name="gender" type="radio" value="Hombre" checked>
+                            </div>
+
+                            <div style="padding-left: 10px; color: #7a7a7a">Mujer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input name="gender" type="radio" value="Mujer">
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-12 form-group">
+                            <label class="sr-only">Sexo</label>
+                            <div style="padding-left: 10px; color: #7a7a7a">Fonasa&nbsp;&nbsp;
+                                <input name="prevision" type="radio" value="Fonasa" checked>
+                            </div>
+                            <div style="padding-left: 10px; color: #7a7a7a">Isapre&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input name="prevision" type="radio" value="Isapre">
+                            </div>
+                        </div>
+                        <div id="prev">
+
+                        </div>
+                    </div>
+                    <div class="row" align="right">
+                        <div class="col-md-12 col-xs-12 form-group">
+                            <label class="sr-only">Mensaje</label>
+                            <textarea class="message form-control" name="message" required placeholder="Escribir mensaje"></textarea>
+                        </div> <!-- /.form-group -->
+                        <input class="btn btn-sub" type="submit" onclick="enviar();" value="Enviar mensaje">
+                    </div>
                 </div>
-            </form> <!-- /.row -->
+            </form>
+            {% endifnotequal %}<!-- /.row -->
 		</div> <!-- /.container -->
+
         <div align="center" style="font-size: x-large">
-                                {% if admin %}
-                                    <button class="btn btn-sub" onclick="guardar();">Guardar</button> {% endif %}</div>
+        {% if admin %}
+            <button class="btn btn-sub" onclick="guardar();">Guardar</button> {% endif %}</div>
 
 	</section>
-
+    {% if admin %}
     </form>
+    {% endif %}
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="copy">
-						Copyright &copy; 2017 Compañia
+						Copyright &copy; 2017 ASESORIAS SOLIS
+
 					</div>
 				</div>
 				<div class="col-sm-4 text-center">
@@ -360,7 +374,7 @@
 				</div>
 				<div class="col-sm-4 text-right">
 					<div class="copy">
-						Desarrollado por ROWebServices. Derechos reservados.
+						Desarrollado por <a href="http://ROSystems.cl">ROSystems</a>. Derechos reservados.
 					</div>
 				</div>
 			</div> <!-- /.row -->
@@ -381,5 +395,13 @@
         }
     </script>
 {% endif %}
+        {% if send_ %}
+        <script >
+        function enviar() {
+            alert("Correo enviado, nos estamos contactando con usted.")
+        }
+
+        </script>
+        {% endif %}
 </body>
 </html>

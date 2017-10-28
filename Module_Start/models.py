@@ -14,6 +14,21 @@ class Page(models.Model):
     reference_one = models.TextField(default='Sin Texto')
     reference_two = models.TextField(default='Sin Texto')
     reference_tree = models.TextField(default='Sin Texto')
+    phone_one = models.IntegerField(default=0)
+    phone_two = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.note
+        return self.title
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100, null=False)
+    rut = models.CharField(max_length=10, null=False)
+    email = models.EmailField(null=False)
+    city = models.CharField(max_length=100, null=False)
+    phone = models.CharField(max_length=100, null=False)
+    gender = models.CharField(max_length=100, null=False)
+    prevision = models.CharField(max_length=100, null=False)
+    message = models.TextField(null=False)
+
+    def __str__(self):
+        return self.name+ ' ' + self.rut
