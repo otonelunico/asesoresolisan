@@ -25,7 +25,6 @@ class Index(View):
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
         form = ContactForm()
-        print(form)
         return render(request, self.template, locals())
 
     def post(self, request, **kwargs):
@@ -58,7 +57,8 @@ class Index(View):
                                 to = [EMAIL_TO])
             msg.content_subtype = 'html'
             msg.send()
-            send_ = True
+            print('envia')
+            #send_ = True
             form.save()
             return redirect('module_start:home')
         else:

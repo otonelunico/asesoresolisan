@@ -66,7 +66,9 @@
 		    <![endif]-->
 	</head>
 <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
-
+{% if admin %}
+    <form method="post" enctype="multipart/form-data" name="form1">
+        {% csrf_token %} {% endif %}
         <section class="header" id="header">
 
             <nav class="navbar navbar-default" id="navigation-bar">
@@ -79,7 +81,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">ASESORIAS solis</a>
+                        <a class="navbar-brand" href="#">solis & san</a>
                     </div> <!-- /.navbar-header -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -179,6 +181,9 @@
                             <style type="text/css">
                                 .service p{
                                     color: #828282;
+                                }
+                                .section h4{
+                                    color: black;
                                 }
                             </style>
 							<div class="col-xs-6 col-sm-6">
@@ -309,14 +314,13 @@
                         <div class="col-sm-2 col-xs-12 form-group">
                             <label class="sr-only">Sexo</label>
                             <div style="padding-left: 10px; color: #7a7a7a">Fonasa&nbsp;&nbsp;
-                                <input name="prevision" type="radio" value="Fonasa" checked>
+                                <input name="prevision" type="radio" value="Fonasa" checked onclick="fonasa()">
                             </div>
                             <div style="padding-left: 10px; color: #7a7a7a">Isapre&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input name="prevision" type="radio" value="Isapre">
+                                <input name="prevision" type="radio" value="Isapre" onclick="isapre()">
                             </div>
                         </div>
                         <div id="prev">
-
                         </div>
                     </div>
                     <div class="row" align="right">
@@ -324,7 +328,7 @@
                             <label class="sr-only">Mensaje</label>
                             <textarea class="message form-control" name="message" required placeholder="Escribir mensaje"></textarea>
                         </div> <!-- /.form-group -->
-                        <input class="btn btn-sub" type="submit" onclick="enviar();" value="Enviar mensaje">
+                        <input class="btn btn-sub" type="submit" value="Enviar mensaje">
                     </div>
                 </div>
             </form>
@@ -391,7 +395,7 @@
 	<script src="{% static 'module_start/js/act_box.js' %}"></script>
     <script type="text/javascript">
         function guardar() {
-            document.getElementById('form').submit();
+            document.getElementById('form1').submit();
         }
     </script>
 {% endif %}
@@ -403,5 +407,20 @@
 
         </script>
         {% endif %}
+<script>
+    function isapre() {
+
+        document.getElementById('prev').innerHTML = "\n" +
+            "                            <div style=\"padding-left: 15px; padding-right: 15px\">\n" +
+            "                                <select name=\"prevision\" class=\"form-control\" style=\"max-width: 350px\">\n" +
+            "                                    <option value=\"Colmena\">Colmena</option>\n" +
+            "                                    <option value=\"Consalud\">consalud</option>\n" +
+            "                                </select>\n" +
+            "                            </div>";
+    }function fonasa() {
+
+        document.getElementById('prev').innerHTML = "";
+    }
+</script>
 </body>
 </html>
