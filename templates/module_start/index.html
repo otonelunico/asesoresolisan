@@ -283,23 +283,23 @@
                         <h3>Envianos un mensaje</h3>
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Nombre</label>
-                            <input name="name" class="form-control" type="text" placeholder="Nombres" maxlength="100">
+                            <input name="name" class="form-control" type="text" placeholder="Nombres" maxlength="100" required>
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Rut</label>
-                            <input name="rut" class="form-control" type="text" placeholder="Ej. 11111111-1" maxlength="10" minlength="9">
+                            <input name="rut" class="form-control" type="text" placeholder="Ej. 11111111-1" maxlength="10" minlength="9" required>
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Email</label>
-                            <input name="email" class="form-control" type="email" placeholder="usuario@correo.cl" maxlength="100">
+                            <input name="email" class="form-control" type="email" placeholder="usuario@correo.cl" maxlength="100" required>
                         </div>
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Ciudad</label>
-                            <input name="city" class="form-control" type="text" placeholder="Ej. Santiago" maxlength="100">
+                            <input name="city" class="form-control" type="text" placeholder="Ej. Santiago" maxlength="100" required>
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Telefono</label>
-                            <input name="phone" class="form-control" type="number" placeholder="+5697413215" maxlength="10" minlength="9">
+                            <input name="phone" class="form-control" type="number" placeholder="+5697413215" maxlength="9" minlength="9" required>
                         </div>
                         <div class="col-sm-2 col-xs-12 form-group">
                             <label class="sr-only">Sexo</label>
@@ -411,10 +411,15 @@
     function isapre() {
 
         document.getElementById('prev').innerHTML = "\n" +
-            "                            <div style=\"padding-left: 15px; padding-right: 15px\">\n" +
+            "                            <div style=\"padding-left: 15px; padding-right: 15px; padding-bottom: 15px\">\n" +
             "                                <select name=\"prevision\" class=\"form-control\" style=\"max-width: 350px\">\n" +
             "                                    <option value=\"Colmena\">Colmena</option>\n" +
-            "                                    <option value=\"Consalud\">consalud</option>\n" +
+            "                                    <option value=\"Consalud\">Consalud</option>\n" +
+            "                                    <option value=\"Más Vida\">Más Vida</option>\n" +
+            "                                    <option value=\"Banmédica\">Banmédica</option>\n" +
+            "                                    <option value=\"Cruz Blanca\">Cruz Blanca</option>\n" +
+            "                                    <option value=\"Vida Tres\">Vida Tres</option>\n" +
+            "                                    <option value=\"Ferrosalud\">Ferrosalud</option>\n" +
             "                                </select>\n" +
             "                            </div>";
     }function fonasa() {
