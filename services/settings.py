@@ -154,3 +154,5 @@ EMAIL_HOST_USER = 'contacto@rosystems.cl'
 EMAIL_HOST_PASSWORD = 'q1w2e3r4t5y6'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_TO = os.getenv('EMAIL_TO')
+
+#LOGIN_REDIRECT_URL= reverse_lazy('module_start:edit')
