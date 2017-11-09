@@ -255,11 +255,11 @@
 	                <h3>Telefono</h3>
 	                <p class="contact">
                         {% if admin %}
-                            <input type="number"  name="phone_one" value="{{ page.phone_one }}" ><br>
-                            <input type="number" name="phone_two" value="{{ page.phone_two }}">
+                            +56 <input type="number"  name="phone_one" required value="+56{{ page.phone_one }}" ><br>
+                            +56 <input type="number" name="phone_two" required value="+56{{ page.phone_two }}">
                         {% else %}
-	                    Movil: <a href="tel:+{{ page.phone_one }}">+{{ page.phone_one }}</a> <br>
-	                    Movil: <a href="tel:+{{ page.phone_two }}">+{{ page.phone_two }}</a>
+	                    Movil: <a href="tel:+56{{ page.phone_one }}">+56{{ page.phone_one }}</a> <br>
+	                    Movil: <a href="tel:+56{{ page.phone_two }}">+56{{ page.phone_two }}</a>
                         {% endif %}
 	                </p>
 	            </div>
@@ -282,23 +282,23 @@
                         <h3>Envianos un mensaje</h3>
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Nombre</label>
-                            <input name="name" class="form-control" type="text" placeholder="Nombres" maxlength="100">
+                            <input name="name" class="form-control" type="text" required placeholder="Nombres" maxlength="100">
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Rut</label>
-                            <input name="rut" class="form-control" type="text" placeholder="Ej. 11111111-1" maxlength="10" minlength="9">
+                            <input name="rut" class="form-control" type="text" required placeholder="Ej. 11111111-1" maxlength="10" minlength="9">
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Email</label>
-                            <input name="email" class="form-control" type="email" placeholder="usuario@correo.cl" maxlength="100">
+                            <input name="email" class="form-control" type="email" required placeholder="usuario@correo.cl" maxlength="100">
                         </div>
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Ciudad</label>
-                            <input name="city" class="form-control" type="text" placeholder="Ej. Santiago" maxlength="100">
+                            <input name="city" class="form-control" type="text" required placeholder="Ej. Santiago" maxlength="100">
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Telefono</label>
-                            <input name="phone" class="form-control" type="number" placeholder="+5697413215" maxlength="10" minlength="9">
+                            <input name="phone" class="form-control" type="number" placeholder="97413215" maxlength="8" minlength="8">
                         </div>
                         <div class="col-sm-2 col-xs-12 form-group">
                             <label class="sr-only">Sexo</label>
@@ -410,10 +410,15 @@
     function isapre() {
 
         document.getElementById('prev').innerHTML = "\n" +
-            "                            <div style=\"padding-left: 15px; padding-right: 15px\">\n" +
+            "                            <div style=\"padding-left: 15px; padding-bottom: 15px; padding-right: 15px\">\n" +
             "                                <select name=\"prevision\" class=\"form-control\" style=\"max-width: 350px\">\n" +
+            "                                    <option value=\"Más vida\">Más vida</option>\n" +
+            "                                    <option value=\"Consalud\">Consalud</option>\n" +
             "                                    <option value=\"Colmena\">Colmena</option>\n" +
-            "                                    <option value=\"Consalud\">consalud</option>\n" +
+            "                                    <option value=\"Cruz Blanca\">Cruz Blanca</option>\n" +
+            "                                    <option value=\"Banmédica\">Banmédica</option>\n" +
+            "                                    <option value=\"Vida tres\">Vida tres</option>\n" +
+            "                                    <option value=\"Otra\">Otra</option>\n" +
             "                                </select>\n" +
             "                            </div>";
     }function fonasa() {
