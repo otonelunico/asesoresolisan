@@ -255,8 +255,8 @@
 	                <h3>Telefono</h3>
 	                <p class="contact">
                         {% if admin %}
-                            +56 <input type="number"  name="phone_one" required value="+56{{ page.phone_one }}" ><br>
-                            +56 <input type="number" name="phone_two" required value="+56{{ page.phone_two }}">
+                            +56 <input type="number"  name="phone_one" required value="{{ page.phone_one }}" ><br>
+                            +56 <input type="number" name="phone_two" required value="{{ page.phone_two }}">
                         {% else %}
 	                    Movil: <a href="tel:+56{{ page.phone_one }}">+56{{ page.phone_one }}</a> <br>
 	                    Movil: <a href="tel:+56{{ page.phone_two }}">+56{{ page.phone_two }}</a>
