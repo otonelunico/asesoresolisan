@@ -38,7 +38,6 @@ class Index(View):
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
         form = ContactForm(request.POST)
-        print(EMAIL_TO)
         if form.is_valid():
             obj = form.save(commit=False)
             template = get_template('module_start/email.html')
@@ -52,14 +51,15 @@ class Index(View):
                         'message': obj.message
                        }
             content = template.render(context)
-            EMAIL_TO = EMAIL_TO.split(',')
-            for email in EMAIL_TO:
+            emails = EMAIL_TO
+            emails = emails.split(',')
+            for email in emails:
                 msg = EmailMessage(obj.name+' '+obj.rut+' Se esta contactando por intermedio de la pagina web',
                                    content,
                                     "contacto@rosystems.cl",
                                     to = [email])
-            msg.content_subtype = 'html'
-            msg.send()
+                msg.content_subtype = 'html'
+                msg.send()
             print('envia ->'+ str(context))
             #send_ = True
             form.save()
