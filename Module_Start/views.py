@@ -52,6 +52,7 @@ class Index(View):
                         'message': obj.message
                        }
             content = template.render(context)
+            EMAIL_TO = EMAIL_TO.split(',')
             for email in EMAIL_TO:
                 msg = EmailMessage(obj.name+' '+obj.rut+' Se esta contactando por intermedio de la pagina web',
                                    content,
