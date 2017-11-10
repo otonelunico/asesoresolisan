@@ -100,24 +100,20 @@
                 <div class="header-table">
                     <div class="header-wrapper">
                         <div>
-                            <div class="header-title hidden-xs">
                             {% if admin %}
+                            <div class="header-title">
                                 <textarea id="editor_title" name="title">
                                     {{ page.title }}
                                 </textarea>
+                            </div>
                             {% else %}
+                            <div class="header-title hidden-xs">
                                 {{ page.title }}
-                            {% endif %}
                             </div>
                             <div class="header-title col-xs-12 hidden-sm hidden-md hidden-lg" style="font-size: 100%">
-                            {% if admin %}
-                                <textarea id="editor_title" name="title">
-                                    {{ page.title }}
-                                </textarea>
-                            {% else %}
                                 {{ page.title }}
-                            {% endif %}
                             </div>
+                            {% endif %}
                         </div>
                     </div> <!-- /.header-wrapper -->
                 </div>
