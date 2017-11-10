@@ -1,8 +1,8 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
-<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
-<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="es-ES"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="es-ES">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="es-ES"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html class="noIE" lang="es-ES">
 <!--<![endif]-->
@@ -10,7 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="description" content="{{ page.title }} - Contacto " />
 		<title>ASESORIAS ISAPRES & SEGUROS EN CLINICA</title>
+        <link href="{% static 'module_start/images/favicon.png' %}" rel="shortcut icon">
         <link href="{% static 'module_start/css/bootstrap.min.css' %}" rel="stylesheet">
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="{% static 'module_start/css/owl.carousel.css' %}">
@@ -90,7 +92,6 @@
                             <li><a href="#header">Home</a></li>
                             <li><a href="#about">Nosotros</a></li>
                             <li><a href="#service">Servicios</a></li>
-                            <!--<li><a href="#portfolio">portfolio</a></li> -->
                             <li><a href="#contact">Contactanos</a></li>
                         </ul> <!-- /.nav -->
                     </div><!-- /.navbar-collapse -->
@@ -256,11 +257,11 @@
 	                <h3>Telefono</h3>
 	                <p class="contact">
                         {% if admin %}
-                            <input type="number"  name="phone_one" value="{{ page.phone_one }}" ><br>
-                            <input type="number" name="phone_two" value="{{ page.phone_two }}">
+                            +56 <input type="number"  name="phone_one" required value="{{ page.phone_one }}" ><br>
+                            +56 <input type="number" name="phone_two" required value="{{ page.phone_two }}">
                         {% else %}
-	                    Movil: <a href="tel:+{{ page.phone_one }}">+{{ page.phone_one }}</a> <br>
-	                    Movil: <a href="tel:+{{ page.phone_two }}">+{{ page.phone_two }}</a>
+	                    Movil: <a href="tel:+56{{ page.phone_one }}">+56{{ page.phone_one }}</a> <br>
+	                    Movil: <a href="tel:+56{{ page.phone_two }}">+56{{ page.phone_two }}</a>
                         {% endif %}
 	                </p>
 	            </div>
@@ -283,6 +284,7 @@
                         <h3>Envianos un mensaje</h3>
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Nombre</label>
+<<<<<<< HEAD
                             <input name="name" class="form-control" type="text" placeholder="Nombres" maxlength="100" required>
                         </div> <!-- /.form-group -->
                         <div class="col-sm-4 col-xs-12 form-group">
@@ -300,6 +302,25 @@
                         <div class="col-sm-4 col-xs-12 form-group">
                             <label class="sr-only">Telefono</label>
                             <input name="phone" class="form-control" type="number" placeholder="+5697413215" maxlength="9" minlength="9" required>
+=======
+                            <input name="name" class="form-control" type="text" required placeholder="Nombres" maxlength="100">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Rut</label>
+                            <input name="rut" class="form-control" type="text" required placeholder="Ej. 11111111-1" maxlength="10" minlength="9">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Email</label>
+                            <input name="email" class="form-control" type="email" required placeholder="usuario@correo.cl" maxlength="100">
+                        </div>
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Ciudad</label>
+                            <input name="city" class="form-control" type="text" required placeholder="Ej. Santiago" maxlength="100">
+                        </div> <!-- /.form-group -->
+                        <div class="col-sm-4 col-xs-12 form-group">
+                            <label class="sr-only">Telefono</label>
+                            <input name="phone" class="form-control" type="number" placeholder="97413215" maxlength="8" minlength="8">
+>>>>>>> 40eccb2d087bda160dc04cd32a7488f2ee16ff6a
                         </div>
                         <div class="col-sm-2 col-xs-12 form-group">
                             <label class="sr-only">Sexo</label>
@@ -348,8 +369,8 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="copy">
-						Copyright &copy; 2017 ASESORIAS SOLIS
-
+						Copyright &copy; 2017 ASESORIAS SOLIS&nbsp;&nbsp;
+                        {% if admin %} {% else %}<a href="{% url 'module_start:edit' %}" style="color: #787878; font-size: large" title="Acceso a editar contenido"><i class="ion-ios-gear"></i></a> {% endif %}
 					</div>
 				</div>
 				<div class="col-sm-4 text-center">
@@ -411,15 +432,28 @@
     function isapre() {
 
         document.getElementById('prev').innerHTML = "\n" +
+<<<<<<< HEAD
             "                            <div style=\"padding-left: 15px; padding-right: 15px; padding-bottom: 15px\">\n" +
+=======
+            "                            <div style=\"padding-left: 15px; padding-bottom: 15px; padding-right: 15px\">\n" +
+>>>>>>> 40eccb2d087bda160dc04cd32a7488f2ee16ff6a
             "                                <select name=\"prevision\" class=\"form-control\" style=\"max-width: 350px\">\n" +
+            "                                    <option value=\"Más vida\">Más vida</option>\n" +
+            "                                    <option value=\"Consalud\">Consalud</option>\n" +
             "                                    <option value=\"Colmena\">Colmena</option>\n" +
+<<<<<<< HEAD
             "                                    <option value=\"Consalud\">Consalud</option>\n" +
             "                                    <option value=\"Más Vida\">Más Vida</option>\n" +
             "                                    <option value=\"Banmédica\">Banmédica</option>\n" +
             "                                    <option value=\"Cruz Blanca\">Cruz Blanca</option>\n" +
             "                                    <option value=\"Vida Tres\">Vida Tres</option>\n" +
             "                                    <option value=\"Ferrosalud\">Ferrosalud</option>\n" +
+=======
+            "                                    <option value=\"Cruz Blanca\">Cruz Blanca</option>\n" +
+            "                                    <option value=\"Banmédica\">Banmédica</option>\n" +
+            "                                    <option value=\"Vida tres\">Vida tres</option>\n" +
+            "                                    <option value=\"Otra\">Otra</option>\n" +
+>>>>>>> 40eccb2d087bda160dc04cd32a7488f2ee16ff6a
             "                                </select>\n" +
             "                            </div>";
     }function fonasa() {

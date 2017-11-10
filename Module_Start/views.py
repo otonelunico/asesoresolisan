@@ -3,9 +3,9 @@ from .forms import PageForm, ContactForm
 from django.views import View
 from .models import Page
 from django.core.mail import EmailMessage
-from django.template import Context
 from django.template.loader import get_template
 from services.settings import EMAIL_TO
+from django.contrib.auth import logout as auth_logout
 
 
 from django.utils.safestring import mark_safe
@@ -67,7 +67,6 @@ class Index(View):
             print(form.errors)
         return render(request, self.template, locals())
 
-
 class Admin(View):
     template = 'module_start/index.html'
 
@@ -103,6 +102,7 @@ class Admin(View):
             if obj.us_img2 == 'us_img2.png':
                 obj.us_img2 = page.us_img2
             form.save()
+            auth_logout(request)
             return redirect('module_start:home')
         else:
             form = PageForm()
