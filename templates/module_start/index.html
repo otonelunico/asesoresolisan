@@ -99,27 +99,26 @@
             <div class="container">
                 <div class="header-table">
                     <div class="header-wrapper">
-                    <div>
-                        <div class="header-title hidden-xs">
-                        {% if admin %}
-                            <textarea id="editor_title" name="title">
+                        <div>
+                            <div class="header-title hidden-xs">
+                            {% if admin %}
+                                <textarea id="editor_title" name="title">
+                                    {{ page.title }}
+                                </textarea>
+                            {% else %}
                                 {{ page.title }}
-                            </textarea>
-                        {% else %}
-                            {{ page.title }}
-                        {% endif %}
-                        </div>
-                        <div class="header-title col-xs-12 hidden-sm hidden-md hidden-lg" style="font-size: 100%">
-                        {% if admin %}
-                            <textarea id="editor_title" name="title">
+                            {% endif %}
+                            </div>
+                            <div class="header-title col-xs-12 hidden-sm hidden-md hidden-lg" style="font-size: 100%">
+                            {% if admin %}
+                                <textarea id="editor_title" name="title">
+                                    {{ page.title }}
+                                </textarea>
+                            {% else %}
                                 {{ page.title }}
-                            </textarea>
-                        {% else %}
-                            {{ page.title }}
-                        {% endif %}
+                            {% endif %}
+                            </div>
                         </div>
-                    </div>
-
                     </div> <!-- /.header-wrapper -->
                 </div>
             </div> <!-- /.container -->
@@ -172,57 +171,58 @@
             <!-- /.quote -->
 	    </section>
 	    <section class="service" id="service">
-		<div class="container">
-			<div class="_section-wrapper">
-				<h2 class="section-title black">
-					Servicios
-				</h2> <!-- /.section-title -->
-				<div class="underline purple"></div>
-				<div class="row">
-					<div class="" >
-						<img src="../media/{{ page.service_img }}" alt="service" class="service-img img-responsive" style="max-width: 420px">
+            <div class="container">
+                <div class="_section-wrapper">
+                    <h2 class="section-title black">
+                        Servicios
+                    </h2> <!-- /.section-title -->
+                    <div class="underline purple"></div>
+                    <div class="row">
+                        <div>
+                            <img src="../media/{{ page.service_img }}" alt="service" class="service-img img-responsive" style="max-width: 420px">
+                        </div>
+                        {% if admin %}
+                            <input type="file" style="display: none" name="service_img" id="id_service_img" />
+                            <input type="button" style="margin-bottom: 100px" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_service_img').click();" title="Cargar imagen">
+                            {% endif %}
 
-					</div>{% if admin %}
-                        <input type="file" style="display: none" name="service_img" id="id_service_img" />
-                        <input type="button" style="margin-bottom: 100px" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_service_img').click();" title="Cargar imagen">
-                        {% endif %}
-					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
-						<div class="row">
-        <div style="background-color: #ededed; padding-top: 60px">
+                        <div class="col-md-offset-4 col-md-8 col-sm-12 services">
+                            <div class="row">
+                                <div style="background-color: #ededed; padding-top: 60px">
 
-        </div>
-                            <style type="text/css">
-                                .service p{
-                                    color: #828282;
-                                }
-                                .section h4{
-                                    color: black;
-                                }
-                            </style>
-							<div class="col-xs-6 col-sm-6">
-								<div class="service-item" align="center">
-                                    {% if admin %}
-                                        <textarea name="service_one" id="editor4"> {{ page.service_one }}</textarea>
-                                    {% else %}
-                                        {{ page.service_one }}
-                                    {% endif %}
-								</div> <!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-6">
-								<div class="service-item" align="center">
-                                    {% if admin %}
-                                        <textarea name="service_two" id="editor5"> {{ page.service_two }}</textarea>
-                                    {% else %}
-                                        {{ page.service_two }}
-                                    {% endif %}
-								</div> <!-- /.service-item -->
-							</div>
-						</div> <!-- /.row -->
-					</div> <!-- /.col-md-6 -->
-				</div> <!-- /.row -->
-			</div> <!-- /.section-wrapper -->
-		</div> <!-- /.container -->
-	</section>
+                                </div>
+                                <style type="text/css">
+                                    .service p{
+                                        color: #828282;
+                                    }
+                                    .section h4{
+                                        color: black;
+                                    }
+                                </style>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="service-item" align="center">
+                                        {% if admin %}
+                                            <textarea name="service_one" id="editor4"> {{ page.service_one }}</textarea>
+                                        {% else %}
+                                            {{ page.service_one }}
+                                        {% endif %}
+                                    </div> <!-- /.service-item -->
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="service-item" align="center">
+                                        {% if admin %}
+                                            <textarea name="service_two" id="editor5"> {{ page.service_two }}</textarea>
+                                        {% else %}
+                                            {{ page.service_two }}
+                                        {% endif %}
+                                    </div> <!-- /.service-item -->
+                                </div>
+                            </div> <!-- /.row -->
+                        </div> <!-- /.col-md-6 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.section-wrapper -->
+            </div> <!-- /.container -->
+	    </section>
         <div style="background-color: #ededed; padding-top: 80px"></div>
 	    <section class="testimonial">
             <div class="container section-wrapper">
@@ -368,7 +368,7 @@
 					</div>
 				</div>
 				<div class="col-sm-4 text-center">
-					<div class="social-icon">
+					<div class="social-icon" >
 						<a href="#">
 							<div class="icon fb">
 								<i class="ion-social-facebook"></i>
