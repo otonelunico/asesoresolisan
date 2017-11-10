@@ -57,7 +57,7 @@ class Index(View):
                                 to = [EMAIL_TO])
             msg.content_subtype = 'html'
             msg.send()
-            print('envia')
+            print('envia ->'+ str(context))
             #send_ = True
             form.save()
             return redirect('module_start:home')
