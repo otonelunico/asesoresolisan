@@ -4,8 +4,8 @@ from django.db import models
 
 class Page(models.Model):
     title = models.TextField(default='Sin Texto')
-    us_img1 = models.ImageField(default='us_img1.png')
-    us_img2 = models.ImageField(default='us_img2.png')
+    us_img1 = models.ImageField(null=False, blank=True)
+    us_img2 = models.ImageField(null=False, blank=True)
     us = models.TextField(default='Sin Texto')
     note = models.TextField(default='Sin Texto')
     service_img = models.ImageField(default='services.png')

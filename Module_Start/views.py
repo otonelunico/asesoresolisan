@@ -99,9 +99,11 @@ class Admin(View):
         page = Page.objects.last()
         if form.is_valid():
             obj = form.save(commit=False)
-            if obj.us_img1:
+            print(obj.us_img1)
+            print(obj.us_img2)
+            if obj.us_img1 == "":
                 obj.us_img1 = page.us_img1
-            if obj.us_img2:
+            if obj.us_img2 == "":
                 obj.us_img2 = page.us_img2
             form.save()
             auth_logout(request)
