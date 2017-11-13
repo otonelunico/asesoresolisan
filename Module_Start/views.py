@@ -98,12 +98,6 @@ class Admin(View):
         admin = True
         if form.is_valid():
             obj = form.save(commit=False)
-            print(obj.us_img1)
-            print(obj.us_img2)
-            if obj.us_img1 == 'us_img1.png':
-                obj.us_img1 = page.us_img1
-            if obj.us_img2 == 'us_img2.png':
-                obj.us_img2 = page.us_img2
             form.save()
             auth_logout(request)
             return redirect('module_start:home')
