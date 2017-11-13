@@ -96,8 +96,13 @@ class Admin(View):
         page.reference_tree = mark_safe(page.reference_tree)
         form = PageForm(request.POST, request.FILES)
         admin = True
+        page = Page.objects.last()
         if form.is_valid():
             obj = form.save(commit=False)
+            if obj.us_img1:
+                obj.us_img1 = page.us_img1
+            if obj.us_img2:
+                obj.us_img2 = page.us_img2
             form.save()
             auth_logout(request)
             return redirect('module_start:home')
