@@ -34,7 +34,7 @@ class Index(View):
         page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
         img = str(page.service_img).split('.')
         page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
-        print(page.services_img)
+
         form = ContactForm()
         return render(request, self.template, locals())
 
