@@ -27,8 +27,12 @@ class Index(View):
         page.reference_one = mark_safe(page.reference_one)
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
+
         img = str(page.us_img1).split('.')
-        img=mark_safe(cloudinary.CloudinaryImage(img[0]+'.'+img[1]).image(width=200, height=200, crop="fill"))
+        page.us_img1 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        img = str(page.us_img2).split('.')
+        page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+
         form = ContactForm()
         return render(request, self.template, locals())
 
@@ -43,7 +47,9 @@ class Index(View):
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
         img = str(page.us_img1).split('.')
-        img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        page.us_img1 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        img = str(page.us_img2).split('.')
+        page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
 
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -92,7 +98,9 @@ class Admin(View):
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
         img = str(page.us_img1).split('.')
-        img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        page.us_img1 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        img = str(page.us_img2).split('.')
+        page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
 
         admin = True
         return render(request, self.template, locals())
