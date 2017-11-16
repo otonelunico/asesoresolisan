@@ -1,4 +1,7 @@
+{% load cloudinary %}
 {% load staticfiles %}
+
+
 <!DOCTYPE html>
 <!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="es-ES"><![endif]-->
 <!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="es-ES">	<![endif]-->
@@ -128,14 +131,17 @@
                 <div class="underline purple"></div>
                 <div class="row" >
                     <div class="col-md-3 col-sm-6">
-                        <div id="us_img1"></div>
+                        <!-- <div id="us_img1"></div> -->
+                        {{ page.us_img1 }}
                         {% if admin %}
                         <input type="file" style="display: none" name="us_img1" id="id_us_img1" />
                         <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img1').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <div id="us_img2"></div>
+                        <!-- <div id="us_img2"></div> -->
+
+                    {{ page.us_img2 }}
                         {% if admin %}
                         <input type="file" style="display: none" name="us_img2" id="id_us_img2" />
                         <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img2').click();" title="Cargar imagen resolucion ideal 250x250px">

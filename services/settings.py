@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary'
 ]
 INSTALLED_APPS+=[
     'Module_Start',
@@ -156,3 +157,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_TO = os.getenv('EMAIL_TO')
 
 #LOGIN_REDIRECT_URL= reverse_lazy('module_start:edit')
+import  cloudinary
+
+cloudinary.config (
+  cloud_name = "hyla9uhuv" ,
+  api_key = "944189283839183" ,
+  api_secret = "zaQbDKgv_GEQqhg1ryivqg8fPQ4"
+)

@@ -7,6 +7,9 @@ from django.template.loader import get_template
 from services.settings import EMAIL_TO
 from django.contrib.auth import logout as auth_logout
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from django.utils.safestring import mark_safe
 # Create your views here.
@@ -24,6 +27,8 @@ class Index(View):
         page.reference_one = mark_safe(page.reference_one)
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
+        img = str(page.us_img1).split('.')
+        img=mark_safe(cloudinary.CloudinaryImage(img[0]+'.'+img[1]).image(width=200, height=200, crop="fill"))
         form = ContactForm()
         return render(request, self.template, locals())
 
@@ -37,6 +42,9 @@ class Index(View):
         page.reference_one = mark_safe(page.reference_one)
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
+        img = str(page.us_img1).split('.')
+        img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+
         form = ContactForm(request.POST)
         if form.is_valid():
             obj = form.save(commit=False)
@@ -83,6 +91,9 @@ class Admin(View):
         page.reference_one = mark_safe(page.reference_one)
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
+        img = str(page.us_img1).split('.')
+        img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+
         admin = True
         return render(request, self.template, locals())
 
@@ -94,18 +105,33 @@ class Admin(View):
         page.reference_one = mark_safe(page.reference_one)
         page.reference_two = mark_safe(page.reference_two)
         page.reference_tree = mark_safe(page.reference_tree)
+        img = str(page.us_img1).split('.')
+        page.us_img1 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        img = str(page.us_img2).split('.')
+        page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+
         form = PageForm(request.POST, request.FILES)
         admin = True
         page = Page.objects.last()
         if form.is_valid():
             obj = form.save(commit=False)
-            print(obj.us_img1)
-            print(obj.us_img2)
+            img1=True
+            img2=True
             if obj.us_img1 == "":
                 obj.us_img1 = page.us_img1
+                img1=False
             if obj.us_img2 == "":
                 obj.us_img2 = page.us_img2
             form.save()
+            if img1:
+                img = str(obj.us_img1).split('.')
+                cloudinary.uploader.upload('media/' + str(obj.us_img1),
+                                           public_id=str(img[0]))
+            if img2:
+                img = str(obj.us_img2).split('.')
+                cloudinary.uploader.upload('media/'+str(obj.us_img2),
+                                           public_id=str(img[0]))
+
             auth_logout(request)
             return redirect('module_start:home')
         else:
