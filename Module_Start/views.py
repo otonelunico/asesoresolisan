@@ -141,6 +141,10 @@ class Admin(View):
                 img1=False
             if obj.us_img2 == "":
                 obj.us_img2 = page.us_img2
+                img2 = False
+            if obj.service_img == "":
+                obj.service_img = page.service_img
+                img3 = False
             form.save()
             if img1:
                 img = str(obj.us_img1).split('.')
@@ -149,6 +153,10 @@ class Admin(View):
             if img2:
                 img = str(obj.us_img2).split('.')
                 cloudinary.uploader.upload('media/'+str(obj.us_img2),
+                                           public_id=str(img[0]))
+            if img3:
+                img = str(obj.service_img).split('.')
+                cloudinary.uploader.upload('media/'+str(obj.service_img),
                                            public_id=str(img[0]))
 
             auth_logout(request)
