@@ -45,20 +45,6 @@
                 background-color: rgba(255,255,255,0);
                 border: 1px solid rgba(255,255,255,0);
             }
-            #us_img1 {
-                background: url('../media/{{ page.us_img1 }}');
-                background-repeat: no-repeat;
-                background-position: center center;
-                height: 250px;
-                width: auto
-            }
-            #us_img2 {
-                background: url('../media/{{ page.us_img2 }}');
-                background-repeat: no-repeat;
-                background-position: center center;
-                height: 250px;
-                width: auto
-            }
             #img img{
                 padding: 10%;
                 width: 100%;
@@ -185,8 +171,8 @@
                     </h2> <!-- /.section-title -->
                     <div class="underline purple"></div>
                     <div class="row">
-                        <div>
-                            <img src="../media/{{ page.service_img }}" alt="service" class="service-img img-responsive" style="max-width: 420px">
+                        <div class="service-img img-responsive" style="max-width: 420px">
+                            {{ page.service_img }}
                         </div>
                         {% if admin %}
                             <input type="file" style="display: none" name="service_img" id="id_service_img" />
