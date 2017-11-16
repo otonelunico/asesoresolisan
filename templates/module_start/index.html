@@ -59,6 +59,11 @@
                 height: 250px;
                 width: auto
             }
+            #img img{
+                padding: 10%;
+                width: 100%;
+                height: auto;
+            }
         </style>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 			<!--[if lt IE 9]>
@@ -129,8 +134,8 @@
                     Nosotros
                 </h2> <!-- /.section-title -->
                 <div class="underline purple"></div>
-                <div class="row" >
-                    <div class="col-md-3 col-sm-6">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6" id="img">
                         <!-- <div id="us_img1"></div> -->
                         {{ page.us_img1 }}
                         {% if admin %}
@@ -138,7 +143,7 @@
                         <input type="button" class="btn btn-sub" value="Cargar imagen" onclick="document.getElementById('id_us_img1').click();" title="Cargar imagen resolucion ideal 250x250px">
                         {% endif %}
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-sm-6" id="img">
                         <!-- <div id="us_img2"></div> -->
 
                     {{ page.us_img2 }}
