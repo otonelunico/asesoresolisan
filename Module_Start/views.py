@@ -136,6 +136,7 @@ class Admin(View):
             obj = form.save(commit=False)
             img1=True
             img2=True
+            img3=True
             if obj.us_img1 == "":
                 obj.us_img1 = page.us_img1
                 img1=False
