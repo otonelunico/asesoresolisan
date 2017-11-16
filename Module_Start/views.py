@@ -33,7 +33,7 @@ class Index(View):
         img = str(page.us_img2).split('.')
         page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
         img = str(page.service_img).split('.')
-        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image())
 
         form = ContactForm()
         return render(request, self.template, locals())
@@ -54,7 +54,7 @@ class Index(View):
         img = str(page.us_img2).split('.')
         page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
         img = str(page.service_img).split('.')
-        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image())
 
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -108,7 +108,7 @@ class Admin(View):
         img = str(page.us_img2).split('.')
         page.us_img2 = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
         img = str(page.service_img).split('.')
-        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image(width=200, height=200, crop="fill"))
+        page.service_img = mark_safe(cloudinary.CloudinaryImage(img[0] + '.' + img[1]).image())
 
         admin = True
         return render(request, self.template, locals())
